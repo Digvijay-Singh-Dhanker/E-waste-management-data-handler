@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioWaste Management</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <div id="DirectEditPreserve" class="wow fadeInUp databaseTable_holder 122860">
+         <!-- <div id="DirectEditPreserve" class="databaseTable_heading">
+            <div id="DirectEditPreserve" class="databaseTable_title">Data Table</div>
+            <input id="DirectEditPreserve" class="databaseTable_search" type="text" width="200"
+                placeholder="Search this table">
+        </div>  -->
+        <div id="DirectEditPreserve" class="databaseTable">
+        
+        <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSMC5oGyNJu2tWQGf-b_dZsVVVqEXPG_6OhBkLLKScMLlVZbW5aZraj4I83VfY1ixAcnjxCTI-585wH/pubhtml?widget=true&amp;headers=false"></iframe>
+    </div>
+    <script type="text/javascript">//on click event for the button with an id of go
+        var go = document.getElementById("go").onclick = function () {//begin function
+
+                //get the search value
+                var search = document.getElementById("search").value;
+
+                //get the html of the iframe(must be in the same domain)
+                var iframe = document.getElementById("iframe2").contentDocument.body;
+
+                /*create a new RegExp object using search variable as a parameter,
+                the g option is passed in so it will find more than one occurence of the
+                search parameter*/
+                var result = new RegExp(search, 'g');
+
+
+
+
+                //set the html of the iframe making the found items bold
+                iframe.innerHTML = iframe.innerHTML.replace(result, "<b>" + search + "</b>");
+
+
+
+            };//end function
+    </script>
+    <script src="./index2.js"></script>
+</body>
+
+</html>
