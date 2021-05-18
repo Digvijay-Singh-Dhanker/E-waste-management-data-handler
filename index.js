@@ -63,7 +63,11 @@ $('.122860.databaseTable_import_wrap').on('scroll', function () {checkButtonNece
 /********************* Initiate All of the Parts *******************/
 $(document).ready(function() {
 
-  var csvfile_import_122860 = "https://raw.githubusercontent.com/Digvijay-Singh-Dhanker/data/main/DATABASE%20FOR%20E_waste%20microbes%20-%20Sheet1.csv".replace(/\&amp\;/g, '&');
+  var csvfile_import_122860 =
+    "https://raw.githubusercontent.com/Digvijay-Singh-Dhanker/data/main/DATABASE%20FOR%20E_waste%20microbes%20-%20Sheet1.csv".replace(
+      /\&amp\;/g,
+      "&"
+    );
   
   $('.122860 .databaseTable_import_wrap').CSVToTable( csvfile_import_122860 , { loadingText: 'Generating Table', loadingImage: 'https://campus.mst.edu/emctest/t4_template/content_types/search_sort_table/images/loading.gif', startLine: 0, tableClass: "databaseTable_import", theadClass: "heading" }).bind("loadComplete",function() { 
     $('.122860 .databaseTable_import_wrap').find('TABLE').tablesorter({ widgets: ["zebra"] });			
